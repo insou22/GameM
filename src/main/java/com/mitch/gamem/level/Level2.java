@@ -45,7 +45,7 @@ public class Level2 extends Level {
 
     @Override
     public Level nextLevel() {
-        return null;
+        return new Level3(main);
     }
 
 }

@@ -79,6 +79,8 @@ public abstract class Level {
                 Block old = getLevelBlocks().get(index(location));
                 if (old instanceof BoxBlock) {
                     getCurrentBlocks().set(index(location), new PathBlock());
+                } else if (old instanceof BoxFinishBlock) {
+                    getCurrentBlocks().set(index(location), new FinishBlock());
                 } else {
                     getCurrentBlocks().set(index(location), getLevelBlocks().get(index(location)));
                 }
@@ -93,6 +95,8 @@ public abstract class Level {
                 Block old = getLevelBlocks().get(index(location));
                 if (old instanceof BoxBlock) {
                     getCurrentBlocks().set(index(location), new PathBlock());
+                } else if (old instanceof BoxFinishBlock) {
+                    getCurrentBlocks().set(index(location), new FinishBlock());
                 } else {
                     getCurrentBlocks().set(index(location), getLevelBlocks().get(index(location)));
                 }

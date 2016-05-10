@@ -21,6 +21,7 @@ public class Main {
 
     private volatile boolean running = true;
 
+    int level = 1;
     private Level currentLevel = new Level1(this);
 
     private KeyThread keyThread;
@@ -50,6 +51,7 @@ public class Main {
             }
         }
         if (currentLevel.isFinished()) {
+            level++;
             currentLevel = currentLevel.nextLevel();
             if (currentLevel == null) {
                 clearScreen();
@@ -64,7 +66,7 @@ public class Main {
     }
 
     private void render() {
-        System.out.println(ansi().fg(Ansi.Color.MAGENTA).a("Controls: [ W A S D / ↑ ← ↓ → ] - Move. R - Restart. Q - quit"));
+        System.out.println(ansi().fg(Ansi.Color.MAGENTA).a("Controls: [ W A S D / ↑ ← ↓ → ] - Move. R - Restart. Q - quit. | Level: " + level));
         System.out.println(ansi().fg(Ansi.Color.BLACK).a("┌───────────────────────────────────────────────────────────────────────────┐"));
         for (int row = 0; row < 15; row++) {
             for (int line = 1; line <= 3; line++) {

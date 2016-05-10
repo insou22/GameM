@@ -37,31 +37,31 @@ public class KeyThread extends Thread {
                     }
                 } else {
                     int id = Character.getNumericValue(input);
-                    if (input == 'w') {
+                    if (input == 'w' || input == 'W') {
                         main.addToQueue(Key.UP);
                         continue;
                     }
-                    if (input == 'a') {
+                    if (input == 'a' || input == 'A') {
                         main.addToQueue(Key.LEFT);
                         continue;
                     }
-                    if (input == 's') {
+                    if (input == 's' || input == 'S') {
                         main.addToQueue(Key.DOWN);
                         continue;
                     }
-                    if (input == 'd') {
+                    if (input == 'd' || input == 'D') {
                         main.addToQueue(Key.RIGHT);
                         continue;
                     }
-                    if (input == 'r') {
+                    if (input == 'r' || input == 'R') {
                         main.addToQueue(Key.R);
                         continue;
                     }
-                    if (input == 'z') {
+                    if (input == 'z' || input == 'Z') {
                         main.addToQueue(Key.Z);
                         continue;
                     }
-                    if (input == 'q') {
+                    if (input == 'q' || input == 'Q') {
                         main.addToQueue(Key.Q);
                         continue;
                     }

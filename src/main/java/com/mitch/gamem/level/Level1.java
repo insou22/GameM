@@ -19,23 +19,23 @@ public class Level1 extends Level {
                 main,
                 new ArrayList<>(
                     Arrays.asList(
-                            V,V,V,V,V,V,V,V,V,V,V,V,V,V,V,
-                            V,V,V,V,V,V,V,V,V,V,V,V,V,V,V,
-                            V,V,V,V,V,V,V,V,V,V,V,V,V,V,V,
+                            V,V,V, V,V,V,V,V,V,V,V, V,V,V,V,
+                            V,V,V, V,V,V,V,V,V,V,V, V,V,V,V,
+                            V,V,V, V,V,V,V,V,V,V,V, V,V,V,V,
 
-                            V,V,V,V,V,W,W,W,V,V,V,V,V,V,V,
-                            V,V,V,V,V,W,F,W,V,V,V,V,V,V,V,
-                            V,V,V,V,V,W,P,W,W,W,W,V,V,V,V,
-                            V,V,V,W,W,W,B,P,B,F,W,V,V,V,V,
-                            V,V,V,W,F,P,B,P,W,W,W,V,V,V,V,
-                            V,V,V,W,W,W,W,B,W,V,V,V,V,V,V,
-                            V,V,V,V,V,V,W,F,W,V,V,V,V,V,V,
-                            V,V,V,V,V,V,W,W,W,V,V,V,V,V,V,
+                            V,V,V, V,V,W,W,W,V,V,V, V,V,V,V,
+                            V,V,V, V,V,W,F,W,V,V,V, V,V,V,V,
+                            V,V,V, V,V,W,P,W,W,W,W, V,V,V,V,
+                            V,V,V, W,W,W,B,P,B,F,W, V,V,V,V,
+                            V,V,V, W,F,P,B,P,W,W,W, V,V,V,V,
+                            V,V,V, W,W,W,W,B,W,V,V, V,V,V,V,
+                            V,V,V, V,V,V,W,F,W,V,V, V,V,V,V,
+                            V,V,V, V,V,V,W,W,W,V,V, V,V,V,V,
 
-                            V,V,V,V,V,V,V,V,V,V,V,V,V,V,V,
-                            V,V,V,V,V,V,V,V,V,V,V,V,V,V,V,
-                            V,V,V,V,V,V,V,V,V,V,V,V,V,V,V,
-                            V,V,V,V,V,V,V,V,V,V,V,V,V,V,V
+                            V,V,V, V,V,V,V,V,V,V,V, V,V,V,V,
+                            V,V,V, V,V,V,V,V,V,V,V, V,V,V,V,
+                            V,V,V, V,V,V,V,V,V,V,V, V,V,V,V,
+                            V,V,V, V,V,V,V,V,V,V,V, V,V,V,V
                     ).stream().map(BlockType::blockValue).collect(Collectors.toList())
                 ),
                 new Location(7, 7)
