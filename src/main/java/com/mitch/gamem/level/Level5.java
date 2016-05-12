@@ -22,7 +22,7 @@ public class Level5 extends Level {
                                 V,V,V, V,V,V,V,V,V,V,V, V,V,V,V,
                                 V,V,V, V,V,V,V,V,V,V,V, V,V,V,V,
 
-                                V,V,V, V,W,W,W,W,W,V,V, V,V,V,V,
+                                V,V,V, V,W,W,W,W,V,V,V, V,V,V,V,
                                 V,V,V, V,W,P,P,W,W,W,V, V,V,V,V,
                                 V,V,V, V,W,P,B,P,P,W,V, V,V,V,V,
                                 V,V,V, W,W,W,P,W,P,W,W, V,V,V,V,

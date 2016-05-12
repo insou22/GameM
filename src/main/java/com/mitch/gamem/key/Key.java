@@ -1,4 +1,4 @@
-package com.mitch.gamem;
+package com.mitch.gamem.key;
 
 public enum Key {
 

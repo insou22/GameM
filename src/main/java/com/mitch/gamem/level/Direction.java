@@ -1,6 +1,6 @@
 package com.mitch.gamem.level;
 
-import com.mitch.gamem.Key;
+import com.mitch.gamem.key.Key;
 
 public enum Direction {
 

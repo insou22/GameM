@@ -1,4 +1,6 @@
-package com.mitch.gamem;
+package com.mitch.gamem.key;
+
+import com.mitch.gamem.Main;
 
 import java.io.IOException;
 
@@ -36,7 +38,6 @@ public class KeyThread extends Thread {
                         continue;
                     }
                 } else {
-                    int id = Character.getNumericValue(input);
                     if (input == 'w' || input == 'W') {
                         main.addToQueue(Key.UP);
                         continue;

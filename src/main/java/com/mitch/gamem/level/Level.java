@@ -8,17 +8,14 @@ import java.util.List;
 
 public abstract class Level {
 
-    public static final int HEIGHT = 15;
-    public static final int WIDTH = 15;
-
     protected final Main main;
-    protected final List<Block> levelBlocks;
+    private final List<Block> levelBlocks;
 
-    protected List<Block> currentBlocks;
+    private List<Block> currentBlocks;
 
-    protected final Location originalLocation;
+    private final Location originalLocation;
 
-    protected Location playerLocation;
+    private Location playerLocation;
 
     protected Level(Main main, List<Block> levelBlocks, Location playerLocation) {
         this.main = main;
@@ -30,7 +27,7 @@ public abstract class Level {
 
     public abstract Level nextLevel();
 
-    public List<Block> getLevelBlocks() {
+    private List<Block> getLevelBlocks() {
         return new ArrayList<>(levelBlocks);
     }
 
@@ -42,7 +39,7 @@ public abstract class Level {
         return playerLocation;
     }
 
-    public Location getLocationFrom(Location location, Direction direction) {
+    private Location getLocationFrom(Location location, Direction direction) {
         switch (direction) {
             case UP:
                 return new Location(location.getX(), location.getY() + 1);
@@ -57,10 +54,15 @@ public abstract class Level {
         }
     }
 
-    public Block getBlockAt(Location location) {
+    private Block getBlockAt(Location location) {
         return getCurrentBlocks().get(((14 - location.getY()) * 15) + location.getX());
     }
 
+    /**
+     *
+     * @param direction
+     * @return Whether the player moved location
+     */
     public boolean movePlayer(Direction direction) {
         Location location = getLocationFrom(getPlayerLocation(), direction);
         Block locBlock = getBlockAt(location);
@@ -120,7 +122,7 @@ public abstract class Level {
         playerLocation = new Location(originalLocation.getX(), originalLocation.getY());
     }
 
-    public static int index(Location location) {
+    private static int index(Location location) {
         return (((14 - location.getY()) * 15) + location.getX());
     }
 

@@ -1,5 +1,7 @@
 package com.mitch.gamem;
 
+import com.mitch.gamem.key.Key;
+import com.mitch.gamem.key.KeyThread;
 import com.mitch.gamem.level.Direction;
 import com.mitch.gamem.level.Level;
 import com.mitch.gamem.level.Level1;
@@ -9,7 +11,7 @@ import static org.fusesource.jansi.Ansi.ansi;
 
 import java.io.IOException;
 import java.util.Queue;
-import java.util.concurrent.ConcurrentLinkedDeque;
+import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.stream.IntStream;
 
 public class Main {
@@ -21,12 +23,12 @@ public class Main {
 
     private volatile boolean running = true;
 
-    int level = 1;
-    private Level currentLevel = new Level1(this);
+    private int level = 1;
+    private Level currentLevel;
 
     private KeyThread keyThread;
 
-    private Queue<Key> keyQueue = new ConcurrentLinkedDeque<>();
+    private Queue<Key> keyQueue = new ConcurrentLinkedQueue<>();
 
     private String clear;
 
@@ -34,8 +36,12 @@ public class Main {
         StringBuilder clearBuilder = new StringBuilder();
         IntStream.range(1, 75).forEach(i -> clearBuilder.append("\r\n"));
         clear = clearBuilder.toString();
+
         keyThread = new KeyThread(this);
         keyThread.start();
+
+        currentLevel = new Level1(this);
+
         clearScreen();
         tick(true);
         while (running) {
@@ -55,6 +61,7 @@ public class Main {
             currentLevel = currentLevel.nextLevel();
             if (currentLevel == null) {
                 clearScreen();
+                running = false;
                 System.out.println(ansi().fg(Ansi.Color.MAGENTA).a("Congratulations, you win!"));
                 System.exit(0);
                 return;
@@ -74,7 +81,7 @@ public class Main {
                 for (int column = 0; column < 15; column++) {
                     currentLevel.getCurrentBlocks().get((row * 15) + column).render(line, (currentLevel.getPlayerLocation().getX() == column && 14 - currentLevel.getPlayerLocation().getY() == row));
                 }
-                System.out.print(ansi().fg(Ansi.Color.BLACK).a("│\n"));
+                System.out.print(ansi().fg(Ansi.Color.BLACK).a("│\r\n"));
             }
         }
         System.out.println(ansi().fg(Ansi.Color.BLACK).a("└───────────────────────────────────────────────────────────────────────────┘"));
@@ -96,6 +103,7 @@ public class Main {
         }
         if (key == Key.Q) {
             clearScreen();
+            running = false;
             System.out.println(ansi().fg(Ansi.Color.BLUE).a("Thanks for playing!"));
             System.out.println();
             System.exit(0);
@@ -105,7 +113,7 @@ public class Main {
     }
 
     public void addToQueue(Key key) {
-        keyQueue.add(key);
+        keyQueue.offer(key);
     }
 
     private void clearScreen() {
