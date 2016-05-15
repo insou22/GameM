@@ -9,12 +9,11 @@ import java.util.List;
 public abstract class Level {
 
     protected final Main main;
-    private final List<Block> levelBlocks;
 
+    private final List<Block> levelBlocks;
     private List<Block> currentBlocks;
 
     private final Location originalLocation;
-
     private Location playerLocation;
 
     protected Level(Main main, List<Block> levelBlocks, Location playerLocation) {
@@ -55,7 +54,7 @@ public abstract class Level {
     }
 
     private Block getBlockAt(Location location) {
-        return getCurrentBlocks().get(((14 - location.getY()) * 15) + location.getX());
+        return getCurrentBlocks().get(index(location));
     }
 
     /**

@@ -15,14 +15,17 @@ public enum BlockType {
 
     BlockType(Class<? extends Block> clazz) {
         this.clazz = clazz;
+        // clazz = VoidBlock.class
     }
 
     public Block blockValue() {
         try {
+            // Return new instance of clazz
             return clazz.getDeclaredConstructor().newInstance();
         } catch (InstantiationException | IllegalAccessException | NoSuchMethodException | InvocationTargetException e) {
             e.printStackTrace();
         }
+        // This should never be called, but just in case
         return new VoidBlock();
     }
 

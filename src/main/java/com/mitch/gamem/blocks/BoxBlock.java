@@ -10,15 +10,9 @@ public class BoxBlock extends Block {
             case 1:
                 System.out.print(ansi().fg(YELLOW).a("┏━━━┓"));
                 break;
-//            case 2:
-//                System.out.print(ansi().fg(YELLOW).a("┃╲ ╱┃"));
-//                break;
             case 2:
                 System.out.print(ansi().fg(YELLOW).a("┃ ╳ ┃"));
                 break;
-//            case 4:
-//                System.out.print(ansi().fg(YELLOW).a("┃╱ ╲┃"));
-//                break;
             case 3:
                 System.out.print(ansi().fg(YELLOW).a("┗━━━┛"));
                 break;

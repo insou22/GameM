@@ -11,15 +11,9 @@ public class FinishBlock extends Block {
                 case 1:
                     System.out.print(ansi().fg(BLUE).a("┏━━━┓"));
                     break;
-//            case 2:
-//                System.out.print(ansi().fg(YELLOW).a("┃╲ ╱┃"));
-//                break;
                 case 2:
                     System.out.print(ansi().fg(BLUE).a("┃").fg(MAGENTA).a("ʘ‿ʘ").fg(BLUE).a("┃"));
                     break;
-//            case 4:
-//                System.out.print(ansi().fg(YELLOW).a("┃╱ ╲┃"));
-//                break;
                 case 3:
                     System.out.print(ansi().fg(BLUE).a("┗━━━┛"));
                     break;
@@ -29,15 +23,9 @@ public class FinishBlock extends Block {
                 case 1:
                     System.out.print(ansi().fg(BLUE).a("┏━━━┓"));
                     break;
-//            case 2:
-//                System.out.print(ansi().fg(YELLOW).a("┃╲ ╱┃"));
-//                break;
                 case 2:
                     System.out.print(ansi().fg(BLUE).a("┃ 0 ┃"));
                     break;
-//            case 4:
-//                System.out.print(ansi().fg(YELLOW).a("┃╱ ╲┃"));
-//                break;
                 case 3:
                     System.out.print(ansi().fg(BLUE).a("┗━━━┛"));
                     break;

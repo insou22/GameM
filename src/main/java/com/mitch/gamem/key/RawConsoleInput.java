@@ -38,9 +38,9 @@ import org.omg.SendingContext.RunTime;
 */
 public class RawConsoleInput {
 
-private static final boolean              isWindows      = System.getProperty("os.name").startsWith("Windows");
+private static final boolean                isWindows      = System.getProperty("os.name").startsWith("Windows");
 private static final int                    invalidKey     = 0xFFFE;
-private static final String                invalidKeyStr = String.valueOf((char)invalidKey);
+private static final String                 invalidKeyStr  = String.valueOf((char)invalidKey);
 
 private static boolean                      initDone;
 private static boolean                      stdinIsConsole;

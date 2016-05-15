@@ -13,15 +13,9 @@ public class PathBlock extends Block {
                 case 1:
                     System.out.print(ansi().fg(GREEN).a("┏━━━┓"));
                     break;
-//            case 2:
-//                System.out.print(ansi().fg(BLUE).a("┣━╋━┫"));
-//                break;
                 case 2:
                     System.out.print(ansi().fg(GREEN).a("┃").fg(MAGENTA).a("ʘ‿ʘ").fg(GREEN).a("┃"));
                     break;
-//            case 4:
-//                System.out.print(ansi().fg(BLUE).a("┣━╋━┫"));
-//                break;
                 case 3:
                     System.out.print(ansi().fg(GREEN).a("┗━━━┛"));
                     break;
@@ -31,15 +25,9 @@ public class PathBlock extends Block {
                 case 1:
                     System.out.print(ansi().fg(GREEN).a("┏━━━┓"));
                     break;
-//            case 2:
-//                System.out.print(ansi().fg(BLUE).a("┣━╋━┫"));
-//                break;
                 case 2:
                     System.out.print(ansi().fg(GREEN).a("┃   ┃"));
                     break;
-//            case 4:
-//                System.out.print(ansi().fg(BLUE).a("┣━╋━┫"));
-//                break;
                 case 3:
                     System.out.print(ansi().fg(GREEN).a("┗━━━┛"));
                     break;

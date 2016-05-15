@@ -10,12 +10,6 @@ public class WallBlock extends Block {
             case 1:
                 System.out.print(ansi().fg(WHITE).a("┏━━━┓"));
                 break;
-//            case 2:
-//                System.out.print(ansi().fg(WHITE).a("┃   ┃"));
-//                break;
-//            case 3:
-//                System.out.print(ansi().fg(WHITE).a("┃   ┃"));
-//                break;
             case 2:
                 System.out.print(ansi().fg(WHITE).a("┣━┳━┫"));
                 break;
