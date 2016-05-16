@@ -7,7 +7,6 @@ import com.mitch.gamem.level.Level;
 import com.mitch.gamem.level.Level1;
 import org.fusesource.jansi.Ansi;
 import org.fusesource.jansi.AnsiConsole;
-import static org.fusesource.jansi.Ansi.ansi;
 
 import java.io.IOException;
 import java.util.Queue;
@@ -15,10 +14,14 @@ import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
+import static org.fusesource.jansi.Ansi.ansi;
+
 public class Main {
 
+    private static final String SEPARATOR = System.lineSeparator();
+
     // String that is built as 75 * \r\n - line break
-    private static final String CLEAR = IntStream.range(1, 75).mapToObj(i -> "\r\n").collect(Collectors.joining());
+    private static final String CLEAR = IntStream.range(1, 75).mapToObj(i -> SEPARATOR).collect(Collectors.joining());
 
     public static void main(String[] args) throws IOException {
         // Load colour API for console
@@ -102,13 +105,15 @@ public class Main {
     private void render() {
         System.out.println(ansi().fg(Ansi.Color.MAGENTA).a("Controls: [ W A S D / ↑ ← ↓ → ] - Move. R - Restart. Q - quit. | Level: " + level));
         System.out.println(ansi().fg(Ansi.Color.BLACK).a("┌───────────────────────────────────────────────────────────────────────────┐"));
+        StringBuilder builder = new StringBuilder();
         for (int row = 0; row < 15; row++) {
+            builder.append("   ");
             for (int line = 1; line <= 3; line++) {
-                System.out.print(ansi().fg(Ansi.Color.BLACK).a("│"));
+                System.out.print(ansi().fg(Ansi.Color.BLACK).a(builder.toString() + "│"));
                 for (int column = 0; column < 15; column++) {
                     currentLevel.getCurrentBlocks().get((row * 15) + column).render(line, (currentLevel.getPlayerLocation().getX() == column && 14 - currentLevel.getPlayerLocation().getY() == row));
                 }
-                System.out.print(ansi().fg(Ansi.Color.BLACK).a("│\r\n"));
+                System.out.print(ansi().fg(Ansi.Color.BLACK).a("│" + SEPARATOR));
             }
         }
         System.out.println(ansi().fg(Ansi.Color.BLACK).a("└───────────────────────────────────────────────────────────────────────────┘"));

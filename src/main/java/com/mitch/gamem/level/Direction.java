@@ -14,7 +14,7 @@ public enum Direction {
     public static Direction valueOf(Key key) {
         // If the key is not a direction
         if (!key.isDirectional()) {
-            return null;
+            return UP;
         }
         // Find the key, return equivalent Direction
         switch (key) {
@@ -28,7 +28,7 @@ public enum Direction {
                 return RIGHT;
         }
         // This should never be reached
-        return null;
+        return UP;
     }
 
 }

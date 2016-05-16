@@ -8,8 +8,6 @@ import java.util.Arrays;
 import java.util.stream.Collectors;
 
 import static com.mitch.gamem.blocks.BlockType.*;
-import static com.mitch.gamem.blocks.BlockType.V;
-import static com.mitch.gamem.blocks.BlockType.W;
 
 public class Level5 extends Level {
 

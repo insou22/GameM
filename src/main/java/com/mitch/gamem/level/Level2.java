@@ -1,17 +1,13 @@
 package com.mitch.gamem.level;
 
 import com.mitch.gamem.Main;
-import com.mitch.gamem.blocks.Block;
 import com.mitch.gamem.blocks.BlockType;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 import java.util.stream.Collectors;
 
 import static com.mitch.gamem.blocks.BlockType.*;
-import static com.mitch.gamem.blocks.BlockType.V;
-import static com.mitch.gamem.blocks.BlockType.W;
 
 public class Level2 extends Level {
 
